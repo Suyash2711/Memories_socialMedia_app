@@ -1,13 +1,11 @@
-// 21:21
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-//SCHEMA
-const postScehma = mongoose.Schema({
+const postSchema = mongoose.Schema({
   title: String,
   message: String,
   creator: String,
   tags: [String],
-  selectedFile: String, //image
+  selectedFile: String,
   likeCount: {
     type: Number,
     default: 0,
@@ -18,7 +16,6 @@ const postScehma = mongoose.Schema({
   },
 });
 
-//Model
-const PostMessage = mongoose.model("PostMessage", postScehma);
+var PostMessage = mongoose.model("PostMessage", postSchema);
 
-export default PostMessage;
+module.exports = PostMessage;
